@@ -1,5 +1,5 @@
 // PEDRA, PAPEL E TESOURA
-/*const escolhaDoUsuario = () => {
+const escolhaDoUsuario = () => {
     let userInput = prompt("Escolha pedra, papel ou tesoura!!!")
 
     if(userInput.toLowerCase() == 'pedra') {
@@ -17,14 +17,14 @@
     }
 
     return userInput
-}*/
+}
 
 const escolhaDoComputador = () => {
     //let decisaoComp = ""
 
-    min = Math.ceil(0);
-    max = Math.floor(3);
-    result = Math.floor(Math.random() * (max - min)) + min;
+    let min = Math.ceil(0);
+    let max = Math.floor(3);
+    let result = Math.floor(Math.random() * (max - min)) + min;
 
     /*if(result == 0) {
         decisaoComp = "tesoura"
@@ -37,4 +37,22 @@ const escolhaDoComputador = () => {
     return decisaoComp*/
     return result
 }
-escolhaDoComputador()
+
+const determineVencedor = (escolhaDoUsuario, escolhaDoComputador) => {
+    if(escolhaDoUsuario === escolhaDoComputador) {
+        document.write("Empatou!!")
+    }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 1) {
+        document.write("Você perdeu")
+    }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 2) {
+        document.write("Você ganhou")
+    }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 0) {
+        document.write("Você ganhou")
+    }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 2) {
+        document.write("Você perdeu")
+    }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 0) {
+        document.write("você perdeu")
+    }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 1) {
+        document.write("você ganhou")
+    }
+}
+
