@@ -33,7 +33,6 @@ const escolhaDoUsuario = () => {
 }
 
 const escolhaDoComputador = () => {
-
     let min = Math.ceil(0);
     let max = Math.floor(3);
     let result = Math.floor(Math.random() * (max - min)) + min;
