@@ -1,33 +1,26 @@
 // PEDRA, PAPEL E TESOURA
 
+
+const criaP = () => {
+    let p = document.createElement('p');
+    return p;
+}
+
+
 const escolhaDoUsuario = () => {
     let userInput = prompt("Escolha pedra, papel ou tesoura!!!")
 
     if(userInput.toLowerCase() == 'pedra') {
-        userInput = 0
+        userInput = 0;
     }else if(userInput.toLowerCase() == 'papel') {
-        userInput = 1
+        userInput = 1;
     }else if(userInput.toLowerCase() == 'tesoura') {
-        userInput = 2
+        userInput = 2;
     }else{
-        document.write("Valor inválido, por favor digite apenas: pedra, papel ou tesoura!!!")
-        userInput = 3
+        alert("Valor inválido, por favor digite apenas: pedra, papel ou tesoura!!!");
+        userInput = 3;
     }
 
-    /*switch(userInput.toLowerCase()) {
-        case 'pedra':
-            userInput = 0
-            break;
-        case 'papel':
-            userInput = 1
-            break;
-        case 'tesoura':
-            userInput = 2
-            break;
-        default:
-            document.write("Valor inválido, por favor digite apenas: pedra, papel ou tesoura!!!")
-            userInput = 3
-    }*/
 
     return userInput
 }
@@ -41,20 +34,38 @@ const escolhaDoComputador = () => {
 }
 
 const determineVencedor = (escolhaDoUsuario, escolhaDoComputador) => {
+    const resultado = document.querySelector('.resultado');
+    resultado.innerHTML = '';
+    const p = criaP();
+
     if(escolhaDoUsuario === escolhaDoComputador) {
-        document.write("Empatou!!")
+        p.innerHTML = "Empatou!";
+        p.classList.add('draw');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 1) {
-        document.write("Você perdeu")
+        p.innerHTML = "Você perdeu!"
+        p.classList.add('lose');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 2) {
-        document.write("Você ganhou")
+        p.innerHTML = "Você ganhou!!"
+        p.classList.add('win');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 0) {
-        document.write("Você ganhou")
+        p.innerHTML = "Você ganhou!!"
+        p.classList.add('win');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 2) {
-        document.write("Você perdeu")
+        p.innerHTML = "Você perdeu!!"
+        p.classList.add('lose');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 0) {
-        document.write("você perdeu")
+        p.innerHTML = "Você perdeu!!"
+        p.classList.add('lose');
+        resultado.appendChild(p)
     }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 1) {
-        document.write("você ganhou")
+        p.innerHTML = "Você ganhou!!"
+        p.classList.add('win');
+        resultado.appendChild(p)
     }
 }
 
@@ -65,4 +76,4 @@ const iniciarJogo = () => {
     determineVencedor(userChoice, computerChoice)
 }
 
-iniciarJogo()
+iniciarJogo();
