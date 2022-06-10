@@ -42,12 +42,6 @@ body{
     
 }
 
-.resultado h1{
-    font-size: 30px;
-    font-family: 'Lucida Sans', Verdana, sans-serif;
-    text-align: center;
-}
-
 .draw {
     max-width: 150px;
     background-color: #808080;
