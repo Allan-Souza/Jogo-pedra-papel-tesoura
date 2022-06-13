@@ -1,12 +1,5 @@
 // PEDRA, PAPEL E TESOURA
 
-
-const criaP = () => {
-    let p = document.createElement('p');
-    return p;
-}
-
-
 const escolhaDoUsuario = () => {
     let userInput = prompt("Escolha pedra, papel ou tesoura!!!")
 
@@ -21,7 +14,6 @@ const escolhaDoUsuario = () => {
         userInput = 3;
     }
 
-
     return userInput
 }
 
@@ -33,36 +25,42 @@ const escolhaDoComputador = () => {
     return result
 }
 
-const determineVencedor = (escolhaDoUsuario, escolhaDoComputador) => {
+
+const criaP = () => {
+    let p = document.createElement('p');
+    return p;
+}
+
+
+const determineVencedor = (usuarioValue, computadorValue) => {
     const resultado = document.querySelector('.resultado');
-    resultado.innerHTML = '';
     const p = criaP();
 
-    if(escolhaDoUsuario === escolhaDoComputador) {
+    if(usuarioValue === computadorValue) {
         p.innerHTML = "Empatou!";
         p.classList.add('draw');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 1) {
+    }else if(usuarioValue === 0 && computadorValue === 1) {
         p.innerHTML = "Você perdeu!"
         p.classList.add('lose');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 0 && escolhaDoComputador === 2) {
+    }else if(usuarioValue === 0 && computadorValue === 2) {
         p.innerHTML = "Você ganhou!!"
         p.classList.add('win');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 0) {
+    }else if(usuarioValue === 1 && computadorValue === 0) {
         p.innerHTML = "Você ganhou!!"
         p.classList.add('win');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 1 && escolhaDoComputador === 2) {
+    }else if(usuarioValue === 1 && computadorValue === 2) {
         p.innerHTML = "Você perdeu!!"
         p.classList.add('lose');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 0) {
+    }else if(usuarioValue === 2 && computadorValue === 0) {
         p.innerHTML = "Você perdeu!!"
         p.classList.add('lose');
         resultado.appendChild(p)
-    }else if(escolhaDoUsuario === 2 && escolhaDoComputador === 1) {
+    }else if(usuarioValue === 2 && computadorValue === 1) {
         p.innerHTML = "Você ganhou!!"
         p.classList.add('win');
         resultado.appendChild(p)
