@@ -14,6 +14,8 @@ const escolhaDoUsuario = () => {
         userInput = 3;
     }
 
+    console.log(`VALOR INSERIDO PELO USUÁRIO: ${userInput}`)
+
     return userInput
 }
 
@@ -21,6 +23,8 @@ const escolhaDoComputador = () => {
     let min = Math.ceil(0);
     let max = Math.floor(3);
     let result = Math.floor(Math.random() * (max - min)) + min;
+
+    console.log(`VALOR INSERIDO PELO USUÁRIO: ${result}`)
 
     return result
 }
