@@ -24,7 +24,7 @@ const escolhaDoComputador = () => {
     let max = Math.floor(3);
     let result = Math.floor(Math.random() * (max - min)) + min;
 
-    console.log(`VALOR INSERIDO PELO USUÁRIO: ${result}`)
+    console.log(`VALOR INSERIDO PELO COMPUTADOR: ${result}`)
 
     return result
 }
